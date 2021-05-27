@@ -1,0 +1,11 @@
+{
+"Declarations":[
+    "structures" : [ "([A-Z][a-z]*_)+s"],
+    "unions" : ["([A-Z][a-z]*_)+u"],
+    "enumerations" : ["([A-Z][a-z]*_)+e"],
+        
+]
+    
+  
+    
+}
