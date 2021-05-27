@@ -25,14 +25,14 @@ public class test {
 
         CParser parser = new CParser(tokens);  // Make parser use these tokens
 
-        ParseTree tree= parser.arrayint(); // begin parsing at int rule (traverse tree from parser)
+        ParseTree tree= parser.compilationUnit(); // begin parsing at int rule (traverse tree from parser)
         //choosing arrayint to make the grammar starts from it
 
         //System.out.println(tree.toStringTree(parser));  // print LISP-style tree
 
 
         ParseTreeWalker parseTreeWalker = new ParseTreeWalker(); //traverse over this tree
-        parseTreeWalker.walk(new UnicodeTranslator(), tree);
+        parseTreeWalker.walk(new Translator(), tree);
 
     }
 }
