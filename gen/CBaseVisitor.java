@@ -1,4 +1,4 @@
-// Generated from C:/Users/LENOVO/Desktop/C-code-parser/src\C.g4 by ANTLR 4.9.1
+// Generated from C:/Users/LENOVO/Desktop/C-code-parser\C.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -247,7 +247,14 @@ public class CBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements CVis
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitStructOrUnionSpecifier(CParser.StructOrUnionSpecifierContext ctx) { return visitChildren(ctx); }
+	@Override public T visitStructORunionwithdec(CParser.StructORunionwithdecContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitStructORunion(CParser.StructORunionContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -464,7 +471,14 @@ public class CBaseVisitor<T> extends AbstractParseTreeVisitor<T> implements CVis
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitTypedefName(CParser.TypedefNameContext ctx) { return visitChildren(ctx); }
+	@Override public T visitId(CParser.IdContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitGlobalORlocal(CParser.GlobalORlocalContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *

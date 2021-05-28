@@ -1,4 +1,4 @@
-// Generated from C:/Users/LENOVO/Desktop/C-code-parser/src\C.g4 by ANTLR 4.9.1
+// Generated from C:/Users/LENOVO/Desktop/C-code-parser\C.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -208,11 +208,19 @@ public interface CVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitTypeSpecifier(CParser.TypeSpecifierContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CParser#structOrUnionSpecifier}.
+	 * Visit a parse tree produced by the {@code structORunionwithdec}
+	 * labeled alternative in {@link CParser#structOrUnionSpecifier}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitStructOrUnionSpecifier(CParser.StructOrUnionSpecifierContext ctx);
+	T visitStructORunionwithdec(CParser.StructORunionwithdecContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code structORunion}
+	 * labeled alternative in {@link CParser#structOrUnionSpecifier}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitStructORunion(CParser.StructORunionContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CParser#structOrUnion}.
 	 * @param ctx the parse tree
@@ -394,11 +402,19 @@ public interface CVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitDirectAbstractDeclarator(CParser.DirectAbstractDeclaratorContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link CParser#typedefName}.
+	 * Visit a parse tree produced by the {@code id}
+	 * labeled alternative in {@link CParser#typedefName}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitTypedefName(CParser.TypedefNameContext ctx);
+	T visitId(CParser.IdContext ctx);
+	/**
+	 * Visit a parse tree produced by the {@code globalORlocal}
+	 * labeled alternative in {@link CParser#typedefName}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitGlobalORlocal(CParser.GlobalORlocalContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link CParser#initializer}.
 	 * @param ctx the parse tree
