@@ -1,4 +1,4 @@
-// Generated from E:/computer Engineering/Final year/second term/compilers/Projects/C-code-parser/src\C.g4 by ANTLR 4.9.1
+// Generated from C:/Users/LENOVO/Desktop/C-code-parser/src\C.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
