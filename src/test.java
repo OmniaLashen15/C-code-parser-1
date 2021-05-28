@@ -26,12 +26,12 @@ public class test {
         CParser parser = new CParser(tokens);  // Make parser use these tokens
 
         ParseTree tree= parser.compilationUnit(); // begin parsing at int rule (traverse tree from parser)
-        //choosing arrayint to make the grammar starts from it
+        //choosing compilationUnit to make the grammar starts from it
 
         //System.out.println(tree.toStringTree(parser));  // print LISP-style tree
 
 
-        Translator CStandards = new Translator(); //traverse over this tree
+        CStandard CStandards = new CStandard(); //traverse over this tree
         CStandards.visit(tree);
 
     }

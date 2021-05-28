@@ -235,8 +235,8 @@ typeSpecifier
     ;
 
 structOrUnionSpecifier
-    :   structOrUnion Identifier? '{' structDeclarationList '}'
-    |   structOrUnion Identifier
+    :   structOrUnion Identifier? '{' structDeclarationList '}' #structORunionwithdec
+    |   structOrUnion Identifier   #structORunion
     ;
 
 structOrUnion
@@ -397,9 +397,8 @@ directAbstractDeclarator
     ;
 
 typedefName
-    :   Identifier
-    | Global
-    | Local
+    :   Identifier   #id
+    | GlobalOrLocal  #globalORlocal
     ;
 
 initializer
@@ -550,8 +549,8 @@ Void : 'void';
 Volatile : 'volatile';
 While : 'while';
 
-Global : 'global';
-Local : 'local';
+GlobalOrLocal : 'global'| 'local';
+
 
 Alignas : '_Alignas';
 Alignof : '_Alignof';
