@@ -31,8 +31,8 @@ public class test {
         //System.out.println(tree.toStringTree(parser));  // print LISP-style tree
 
 
-        ParseTreeWalker parseTreeWalker = new ParseTreeWalker(); //traverse over this tree
-        parseTreeWalker.walk(new Translator(), tree);
+        Translator CStandards = new Translator(); //traverse over this tree
+        CStandards.visit(tree);
 
     }
 }
