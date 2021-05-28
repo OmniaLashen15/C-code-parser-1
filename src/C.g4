@@ -398,6 +398,8 @@ directAbstractDeclarator
 
 typedefName
     :   Identifier
+    | Global
+    | Local
     ;
 
 initializer
@@ -547,6 +549,9 @@ Unsigned : 'unsigned';
 Void : 'void';
 Volatile : 'volatile';
 While : 'while';
+
+Global : 'global';
+Local : 'local';
 
 Alignas : '_Alignas';
 Alignof : '_Alignof';
