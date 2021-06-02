@@ -20,17 +20,14 @@ public class CStandard extends CBaseVisitor<String> {
     }
 
     @Override
-    public String visitStructORunion(CParser.StructORunionContext ctx) {
-        String val = String.valueOf(ctx.structOrUnion().toString());
-        if (ctx.structOrUnion().toString().equals("struct") && ctx.structOrUnion().toString().equals("([A-Z][a-z0-9]*_)+s")) {
-            System.out.println("right struct");
-        }
-        else if (ctx.structOrUnion().toString().equals("union") && ctx.structOrUnion().toString().equals("([A-Z][a-z0-9]*_)+u")) {
-            System.out.println("right union");
-        }
-        else {
-            System.out.println("Please write the right formate");
-        }
+    public String visitSTRUCTORUNION(CParser.STRUCTORUNIONContext ctx) {
+      String val =String.valueOf(ctx.structOrUnionSpecifier());
+      if(!(ctx.structOrUnionSpecifier().toString().matches("([A-Z][a-z0-9]*_)+s")))
+      {
+          System.out.println("violation");
+      }
         return val;
     }
+
+
 }

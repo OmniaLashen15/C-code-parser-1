@@ -1,3 +1,1 @@
-global int y=3;
-global float x=9;
-struct x;
+struct x
