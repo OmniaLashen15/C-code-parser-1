@@ -1,1 +1,2 @@
-struct x
+struct x;
+enum t;

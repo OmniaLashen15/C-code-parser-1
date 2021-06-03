@@ -6,26 +6,39 @@ import java.io.FileInputStream;
 import  org.antlr.v4.runtime.*;
 import org.antlr.v4.runtime.tree.*;
 public class CStandard extends CBaseVisitor<String> {
-    @Override
-    public String visitGlobalORlocal(CParser.GlobalORlocalContext ctx) {
 
-        String val = String.valueOf(ctx.GlobalOrLocal().toString());
-        if (ctx.GlobalOrLocal().toString().equals("global")) {
-            System.out.println("global");
+
+    @Override
+    public String visitStructOrUnionSpecifier(CParser.StructOrUnionSpecifierContext ctx) {
+        String val = String.valueOf(ctx.structOrUnion());
+        if (ctx.structOrUnion().getText().matches("struct")) {
+            if ((ctx.Identifier().getText().matches("([A-Z][a-z0-9]*_)+s")) == false)
+                System.out.println("Violation, STRUCT");
         } else {
-            System.out.println("local");
+            if ((ctx.Identifier().getText().matches("([A-Z][a-z0-9]*_)+u")) == false) {
+                System.out.println("Violation, UNION");
+
+            }
         }
         return val;
-
     }
 
     @Override
-    public String visitSTRUCTORUNION(CParser.STRUCTORUNIONContext ctx) {
-      String val =String.valueOf(ctx.structOrUnionSpecifier());
-      if(!(ctx.structOrUnionSpecifier().toString().matches("([A-Z][a-z0-9]*_)+s")))
-      {
-          System.out.println("violation");
-      }
+    public String visitEnumSpecifier(CParser.EnumSpecifierContext ctx) {
+        String val = String.valueOf(ctx.Identifier());
+
+        if ((ctx.Identifier().getText().matches("([A-Z][a-z0-9]*_)+e")) == false) {
+            System.out.println("Violation, ENUM");
+        }
+        return val;
+    }
+
+    @Override
+    public String visitFunctionSpecifier(CParser.FunctionSpecifierContext ctx) {
+        String val = String.valueOf(ctx.Identifier());
+        if ((ctx.Identifier().getText().matches("([A-Z][a-z0-9]*_)+f")) == false) {
+            System.out.println("Violation, function");
+        }
         return val;
     }
 

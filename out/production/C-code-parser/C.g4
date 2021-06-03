@@ -211,27 +211,28 @@ storageClassSpecifier
     ;
 
 typeSpecifier
-    :   'void'         #VOID
-    |   'char'          #CHAR
-    |   'short'         #SHORT
-    |   'int'           #Int
-    |   'long'          #LONG
-    |   'float'         #FLOAT
-    |   'double'        #DOUBLE
-    |   'signed'        #SIGNED
-    |   'unsigned'      #UNSIGNED
-    |   '_Bool'         #BOOL
-    |   '_Complex'      #COMPLEX
-    |   '__m128'        #M128
-    |   '__m128d'       #M128D
-    |   '__m128i'          #TYPES
-    |   '__extension__' '(' ('__m128' | '__m128d' | '__m128i') ')' #EXTENSIONS
-    |   atomicTypeSpecifier            #ATOMIC
-    |   structOrUnionSpecifier         #STRUCTORUNION
-    |   enumSpecifier                  #ENUM
-    |   typedefName                    #TYPEDEFNAME
-    |   '__typeof__' '(' constantExpression ')'       #CONSTANTEXPR  // GCC extension
-    |   typeSpecifier pointer           #POINTER
+    :   ('void'
+    |   'char'
+    |   'short'
+    |   'int'
+    |   'long'
+    |   'float'
+    |   'double'
+    |   'signed'
+    |   'unsigned'
+    |   '_Bool'
+    |   '_Complex'
+    |   '__m128'
+    |   '__m128d'
+    |   '__m128i')
+    |   '__extension__' '(' ('__m128' | '__m128d' | '__m128i') ')'
+    |   atomicTypeSpecifier
+    |   structOrUnionSpecifier
+    |   enumSpecifier
+    |   typedefName
+    |   '__typeof__' '(' constantExpression ')'         // GCC extension
+    |   typeSpecifier pointer Identifier
+
     ;
 
 structOrUnionSpecifier
@@ -397,8 +398,7 @@ directAbstractDeclarator
     ;
 
 typedefName
-    :   Identifier   #id
-    | GlobalOrLocal  #globalORlocal
+    :   Identifier
     ;
 
 initializer
@@ -514,10 +514,7 @@ declarationList
     :   declaration+
     ;
 
-decstrut: DecStructure    #decStruct
-;
 
-DecStructure: (([A-Z][a-z0-9]*[_])+)[s];
 Auto : 'auto';
 Break : 'break';
 Case : 'case';
